@@ -1,0 +1,39 @@
+# Python-specific
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+env/
+venv/
+*.env
+
+# Flask specific
+instance/
+*.sqlite3
+*.db
+
+
+migrations/
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Miscellaneous
+*.log
+*.pid
+*.swp
+*.swo
+
+# Git directories
+.git/
+
+# Other sensitive or unnecessary files
+*.pkl
+*.cache
+*.bak
+*.tmp

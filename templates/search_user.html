@@ -1,0 +1,42 @@
+{% extends "header.html" %}
+
+{% block title %}Search Users{% endblock %}
+
+{% block content %}
+    <h1>Search Users</h1>
+    <form action="/search-users" method="get">
+        <input type="text" name="query" value="{{ query }}" placeholder="Search by name">
+        <button type="submit">Search</button>
+    </form>
+
+    {% if users is not none %}
+        {% if users|length == 0 %}
+            <p>No users found.</p>
+        {% else %}
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in users %}
+                    <tr>
+                        <td>{{ user.id }}</td>
+                        <td>{{ user.first_name }}</td>
+                        <td>{{ user.last_name }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.age }}</td>
+                        <td>{{ user.gender }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    {% endif %}
+{% endblock %}
